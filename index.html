@@ -59,7 +59,7 @@
             previousTimestamp = timestamp;
 
             // Rotate the tetrahedron only on Y axis
-            var rotationSpeed = 0.01;
+            var rotationSpeed = 0.1;  // Increase rotation speed
             tetrahedron.rotation.y += rotationSpeed * deltaTime / 1000;  // Normalize rotation speed
 
             // Render the scene
@@ -72,4 +72,5 @@
     </script>
 </body>
 </html>
+
 
