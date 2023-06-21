@@ -55,6 +55,9 @@
         // Animation loop
         var previousTimestamp = 0;
         function animate(timestamp) {
+            if (previousTimestamp > timestamp) {
+                previousTimestamp = timestamp;
+            }
             var deltaTime = timestamp - previousTimestamp;
             previousTimestamp = timestamp;
 
@@ -72,5 +75,6 @@
     </script>
 </body>
 </html>
+
 
 
