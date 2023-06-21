@@ -1,0 +1,43 @@
+<div id="canvas"></div>
+
+<script src="https://threejs.org/build/three.js"></script>
+<script>
+    // Create a scene
+    var scene = new THREE.Scene();
+
+    // Create a camera
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 2;
+
+    // Create a renderer and set its size
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    // Append the renderer to the canvas div
+    document.getElementById("canvas").appendChild(renderer.domElement);
+
+    // Create a 64-faced polyhedron
+    var geometry = new THREE.IcosahedronGeometry(1, 3);
+
+    // Create a material with a bright purple/pink color
+    var material = new THREE.MeshBasicMaterial({color: 0xFF00FF, wireframe: true}); 
+
+    // Combine geometry and material to create a mesh
+    var tetrahedron = new THREE.Mesh(geometry, material);
+
+    // Add the tetrahedron to the scene
+    scene.add(tetrahedron);
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Rotate the tetrahedron only on Y axis
+        tetrahedron.rotation.y += 0.01;
+
+        // Render the scene
+        renderer.render(scene, camera);
+    }
+
+    animate();
+</script>
