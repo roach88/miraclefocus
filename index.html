@@ -2,6 +2,11 @@
 <html>
 <head>
     <style>
+        @font-face {
+    font-family: 'Eurostile';
+    src: url('https://roach88.github.io/miraclefocus/fonts/EUROSTIB.ttf');
+    format('truetype');
+}
         body {
             background-color: black;
             margin: 0;
@@ -15,9 +20,17 @@
             width: 100%;
             height: 100%;
         }
+         h1 {
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            top: 10%;  // Adjust this value as needed 
+            font-size: 3em;
+        }
     </style>
 </head>
 <body>
+    <h1>Miracle Focus</h1>
     <div id="canvas"></div>
 
     <script src="https://threejs.org/build/three.js"></script>
